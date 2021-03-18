@@ -1,0 +1,15 @@
+version:2.1
+
+jobs:
+  my_job:
+    docker:
+      - image: circleci/node:13.8.0
+    steps:
+      - run: return 1
+      -run:
+      name: on error
+      command: echo "Hello Error!"
+workflows:
+  my_workflow:
+    jobs:
+      - my_job
